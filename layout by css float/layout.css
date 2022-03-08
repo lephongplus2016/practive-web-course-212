@@ -1,0 +1,34 @@
+.header {
+    background-color: red;
+    height: 150px;
+}
+
+.footer {
+    background-color: blue;
+    height: 150px;
+}
+
+.container {
+    padding: 10px;
+}
+
+.sidebar {
+    float: right;
+    height: 200px;
+    width: 30%;
+    background-color: yellow;
+}
+
+.content {
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+/* tại sao cần clear
+vì thẻ float vẫn còn tác dụng khi tới footer, nên footer sẽ bị trôi,
+cần clear để tắt thuộc tính float đi
+*/
+.clearfix {
+    clear: both;
+}
