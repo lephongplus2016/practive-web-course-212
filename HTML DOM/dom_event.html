@@ -12,11 +12,20 @@
         khi event thực hiện trên thẻ tag con, thì thẻ cha lồng bên ngoài cũng 
         bị ảnh hưởng.
         -->
+
+        <!-- ở đây phải ghi đúng từ event,
+        onchange là khi mà bấm thoát khỏi input ấy thì nó mới thực hiện function
+        -->
+        <input type="text" onchange="changeText(event)"></input>
     </body>
     <script>
         let node = document.querySelector("h1");
         node.onmouseleave = function () {
             console.log("cách 2: sử dụng event từ element node");
         };
+
+        changeText = (e) => {
+            console.log(e.target.value);
+        }
     </script>
 </html>
