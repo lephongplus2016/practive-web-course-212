@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 onclick="console.log(Math.random())">DOM EVENT</h1>
+        <!-- chú ý có sự nổi bọt ở đây
+        khi event thực hiện trên thẻ tag con, thì thẻ cha lồng bên ngoài cũng 
+        bị ảnh hưởng.
+        -->
+    </body>
+    <script>
+        let node = document.querySelector("h1");
+        node.onmouseleave = function () {
+            console.log("cách 2: sử dụng event từ element node");
+        };
+    </script>
+</html>
