@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>nội dung của thẻ h1</h1>
+    </body>
+    <script>
+        // innerText, textContent là các thuộc tính gọi ra được từ element node
+        let nodeH1 = document.querySelector("h1");
+        console.log(nodeH1.innerHTML);
+
+        // dùng getter
+        console.log(nodeH1.textContent);
+        // dùng getter
+        nodeH1.textContent = "text change";
+        // khác biệt: cái textContent lấy luôn khoảng trắng, xuống dòng,...
+        // nói chung là lấy từng kí tự trong phần text
+        // còn innerText: trả về đúng những gì ta nhìn thấy ở trình duyệt
+
+        // ví dụ
+        nodeH1.innerText = `
+        
+
+
+
+        xuống dòng mà không cần br nè
+
+
+
+        hello
+        `;
+    </script>
+</html>
