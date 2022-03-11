@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <script>
+            var headingElement = document.querySelector("h1");
+            // tuy nhiên title này chỉ có khi mã js được thực thi, nghĩa là nó chạy ở Dev tool
+            // còn khi show source code thì không có
+            // Nhớ là chỉ thêm được các attribute hợp lệ với tag đó thôi
+            headingElement.title = "Heading title";
+
+            // cách 2
+            headingElement.setAttribute("class", "classHeading");
+
+            // lấy attribute
+            console.log(headingElement.getAttribute("title"));
+        </script>
+    </body>
+</html>
