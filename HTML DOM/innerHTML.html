@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="box"></div>
+        <script>
+            boxNode = document.getElementsByClassName("box")[0];
+            // console.log(boxNode);
+
+            // cho phép tạo ra 1 element node html ở trong element hiện tại luôn
+            boxNode.innerHTML = "<h1>h1 nè</h1>";
+
+            console.log(boxNode.outerHTML);
+
+            // cái outer này không ko chỉ can thiệp nội dung bên trong thẻ đó, mà cả
+            // chính thẻ tag đó, ở đây là div box
+            boxNode.outerHTML = "<span>thay bằng outerHTML</span>";
+
+            // ở đây log vẫn còn thẻ div box là do lưu trong cache mà thôi
+            // trong dom html đã không còn element box nữa
+            console.log(boxNode.outerHTML);
+        </script>
+    </body>
+</html>
