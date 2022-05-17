@@ -1,0 +1,71 @@
+<!-- 
+    Mỗi khi client và server có 1 kết nối http
+    thì server ở lần phản hồi đầu tiên sẽ gửi cho client đó 1 session_id.
+    Từ đó, các cookie của client khi gửi về server đều gửi kèm session_id này
+ -->
+<!-- 
+     Các thành phần phụ:
+     - expires: thời gian hết hạn
+     - domain: tên miền gửi cookie đi
+     - path:
+     - secure: mã hóa hay ko 
+     - name: tên cookie  
+     chrome://settings/siteData
+     rồi vào domain trang localhost hoặc 127.0.0.1 để xem cookie
+  -->
+<!-- cần mã hóa khoảng trắng  -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Hello cookie js</h1>
+        <input type="text" name="fullname" id="fullname" placeholder="" />
+        <input type="button" value="Set cookie" onclick="setCookie();" />
+        <input type="button" value="Get cookie" onclick="getCookie();" />
+        <input type="button" value="Remove cookie" onclick="delCookie();" />
+    </body>
+    <script type="text/javascript">
+        document.cookie = "username=John Doe";
+        let x = document.cookie;
+        console.log(x);
+        function setCookie() {
+            var fullname = document.getElementById("fullname").value;
+            if (fullname != "") {
+                document.cookie = "fullname=" + fullname;
+                document.cookie = "firstname=" + fullname;
+                alert("Ghi cookie thanh cong");
+            } else {
+                alert("Du lieu khong duoc rong");
+            }
+        }
+
+        function getCookie() {
+            if (document.cookie.length > 0) {
+                var cookie = document.cookie;
+                // alert(cookie);
+                // tách chuỗi để lấy mảng cookies
+                arrCookie = cookie.split(";");
+
+                for (let i = 0; i < arrCookie.length; i++) {
+                    let temp = arrCookie[i].split("=");
+                    let name = temp[0];
+                    let value = temp[1];
+                    alert("Name: " + name + " Value:" + value);
+                }
+            } else {
+                alert("Chua co cookie nao");
+            }
+        }
+
+        function delCookie() {
+            document.cookie =
+                "fullname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+    </script>
+</html>
